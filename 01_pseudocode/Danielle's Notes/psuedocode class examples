@@ -1,0 +1,105 @@
+Demonstration Labs
+1. Explain why each of the following names does or does not seem like a good variable name to represent a state sales tax rate.
+
+stateTaxRate				
+txRt					    	too cryptic	
+t								too short
+stateSalesTaxRateValue			too long
+taxRate							not enough info... potentially
+1TaxRate						can't start with a # (can start with and _)
+moneyCharged					too cryptic, seems off
+
+
+2. If productCost and productPrice are numeric variables, and productName is a string variable, which of the following statements are valid assignments? 
+If a statement is not valid, explain why not.
+
+productCost = 100						Yes, Numeric
+productPrice = productCost				yes, product Cost is a numeric
+productPrice = productName				no, product name is not numeric
+productPrice = “24.95”					no, "" = string in most languages
+15.67 = productCost						no,
+productCost = productPrice – 10			yes, arithmetic is allowed with numerics
+productName = “mouse pad”				yes, this is a string
+productCost + 20 = productPrice			no,
+productName = 3-inch nails				no, needs quotations
+productName = 43						no, needs quotations/ it is numeric
+productName = productCost				no, this variable is numeric, not  a string
+
+
+3. Draw a typical hierarchy chart for a program that produces a monthly bill for a cellphone customer. Try to think of at least 10 separate modules that might be included. 
+For example, one module might calculate the charge for daytime phone minutes used.
+
+				produceMonthlyBill()
+					getBasic()
+					getNumTexts()  getCallMins() 
+				
+					computeTaxes()
+					getFedTax() getStateTax() getLocalTax() getFlatRate()
+				
+					ComputeFees()
+					countryFrom() countryTo()
+					
+					printBill()
+
+4. Draw the hierarchy chart and then plan the logic for a program that calculates a person’s body mass index (BMI). BMI is a statistical measure that compares a person’s 
+body mass index (BMI). BMI is a statistical measure that compares a person’s weight and height. The program uses three modules. The first prompts a user for and accepts 
+the user’s hight in inches. The second module accepts the user’s weight in pounds and converts the user’s height to meters and weight to kilograms. Then, it calculates BMI 
+as weight in kilograms divided by height in meters squared, and displays the results. There are 2.54 centimeters in an inch, 100 centimeters in a meter, 453.59 grams in a pound, 
+and 1,000 grams in a kilogram. Use named constants whenever you think they are appropriate. The last module displays the message End of job.
+
+5. Revise the BMI-determining program to execute continuously until the user enters ) for the height in inches.
+
+6. Draw the hierachy chart and design the logic for a program that calculates teh projected cost of a remodeling project. Assume that the labor cost is $30 per hour. Design a 
+program that prompts the user for a number hours projected for the job, which is the number of hourstimes the hourly rate plus the 120% of the wholesale cost of materials. The 
+program accepts data continuously until 0 is entered for the number of hours. Use appropriate modules, including one that displays End of program when the program is finished.
+
+7. Draw the hierarchy chart and design the logic for a program for Arnie's Appliances. Design a program that prompts the user for a refrigerator model nmae and the interior 
+height, width, and depth in inches. Calculate the refrigerator capacity in cubic feet by first multiplying the height, width, and depth to get cubic inches, and then dividing 
+by 1728 (the number of cubic inches in cubic foot). The program accepts model names continuoulsly until "XXX" is entered. Use named constants where appropriate. Also use modules, 
+including one that displays End of job after the sentinel is entered for the model name.
+
+Practice Exercises
+Find The Bugs
+
+1. Your files for this will be provided by the instructor. They include; DEBUG02-01.txt, DEBUG02-02.txt, and DEBUG02-03.txt. Each file starts with some comments that describe the problem. Comments are lines that begin with two slashes (//). Following the comments, each file contains pseudocode that has one or more bugs you must find and correct.
+
+2. Your files for this will be provided by the instructor. They include; DEBUG02-04.jpg that contains a flowchart with syntax and/or logical errors. Examine the flowchart, and then find and correct all of the bugs.
+
+Find the error in the following pseudocode
+1. 
+Module main()
+    Declare Real mileage
+    call getMileage()
+    Display "You've driven a total of ", mileage, " miles."
+End Module
+
+2. 
+Module getMileage()
+    Display "Enter your vehicle's mileage."
+    Input mileage
+End Module
+
+Find the potential error in the following pseudocode.
+1. 
+Module manin()
+    Call squareNumber(5)
+End Module
+
+2.
+Module squareNumber(Integer Ref number)
+    Set number = number^2
+    Display number
+End Module
+
+
+Summary
+Programs contain literals, variables, and named constants
+Arithmetic follows rules of precedence
+Break down programming problems into modules
+Include a header, a body, and a return statement
+Hierarchy charts show relationship among modules
+As programs become more complicated:
+Need for good planning and design increases
+Performance Lab 2
+
+Continue to Performance Lab 2 prior to continuing to the next topic.
