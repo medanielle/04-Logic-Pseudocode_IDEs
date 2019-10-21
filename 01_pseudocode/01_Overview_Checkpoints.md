@@ -1,8 +1,8 @@
 # Checkpoint
-1.1 What is a program?
-test
-1.2 What is hardware?
-
+1.1 What is a program?  
+test  
+1.2 What is hardware?  
+second test  
 1.3 List the five major components of a computer system.
 
 1.4 What part of the computer actually runs programs?
