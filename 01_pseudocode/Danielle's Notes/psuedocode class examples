@@ -47,17 +47,199 @@ the user’s hight in inches. The second module accepts the user’s weight in p
 as weight in kilograms divided by height in meters squared, and displays the results. There are 2.54 centimeters in an inch, 100 centimeters in a meter, 453.59 grams in a pound, 
 and 1,000 grams in a kilogram. Use named constants whenever you think they are appropriate. The last module displays the message End of job.
 
+		(Start)
+		|declarations
+		|
+		|
+		
+		/input height/
+		/input weight/
+		
+		|process
+		
+		/output answer/
+		
+		(stop)
+
+
 5. Revise the BMI-determining program to execute continuously until the user enters ) for the height in inches.
+
+(skipped)
 
 6. Draw the hierachy chart and design the logic for a program that calculates teh projected cost of a remodeling project. Assume that the labor cost is $30 per hour. Design a 
 program that prompts the user for a number hours projected for the job, which is the number of hourstimes the hourly rate plus the 120% of the wholesale cost of materials. The 
 program accepts data continuously until 0 is entered for the number of hours. Use appropriate modules, including one that displays End of program when the program is finished.
+
+(skipped)
 
 7. Draw the hierarchy chart and design the logic for a program for Arnie's Appliances. Design a program that prompts the user for a refrigerator model nmae and the interior 
 height, width, and depth in inches. Calculate the refrigerator capacity in cubic feet by first multiplying the height, width, and depth to get cubic inches, and then dividing 
 by 1728 (the number of cubic inches in cubic foot). The program accepts model names continuoulsly until "XXX" is entered. Use named constants where appropriate. Also use modules, 
 including one that displays End of job after the sentinel is entered for the model name.
 
+(skipped)
+
+*** not included excess cellphone ***
+FLOWchart
+(start)
+/Display "enter minutes/
+/input excessMIn/
+|Set overageFee = excessMin * 0.35 |
+/Display "your fee is $", overageFee/
+(end)
+
+PSUEDOcode
+Start
+	Declare excessMin
+	Declare overageFee
+
+	Display "Enter the excess minutes"
+	input excessMin
+	
+	overageFee = excessMin * .35
+	Display "your fee is ", overageFee
+End
+
+*** extra sale percentage ***
+FLOWchart
+(start)
+/Display "enter price"/
+/input origPrice/
+|Set discount = origPrice * 0.20 |
+|Set salePrice = origPrice - discount|
+/Display "the sale price is $", salePrice/
+(end)
+
+PSEUDOcode
+Start
+	Display
+
+
+***Calc Average***
+FLOWchart
+(start)
+/Display "enter first score"/
+/input firstScore/
+/Display "enter second score"/
+/input secondScore/
+/Display "enter third score"/
+/input thirdScore/
+|Set Average = (firstScore + secondScore + thirdScore) /3 |
+/Display "the sale price is $", Average
+(end)
+
+PSEUDOcode
+Start
+
+
+***Math Formula*** P(present value) = F(Futurevalue)/(1+rate(interest rate))^n (number of years)
+FLOWchart
+(start)
+/Display "desired future value"/
+/input Future/
+/Display "estimated interest rate"/
+/input intRate/
+/Display "number of years"/
+/input numYears/
+|Set Deposit = Future/(1 + intRate)^numYears |
+/Display "estimated deposite needed", Deposit
+(end)
+
+PSEUDOcode
+Start
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Perfomance Lab 1
+    1. Personal Information. Design a program that displays the following information:
+        ◦ Your name
+        ◦ Your address, with city, state, and ZIP
+        ◦ Your telephone number
+        ◦ Your college major
+
+FLOWchart
+(start)
+/Display "Your Name"/
+/Display "Your address, with city, state, and ZIP"/
+/Display "Your telephone number"/
+/Display "Your college major"/
+(end)
+
+PSUEDOcode
+Start
+	Display "Your Name"
+	Display "Your address, with city, state, and ZIP"
+	Display "Your telephone number"
+	Display "Your college major"
+End
+		
+		
+		
+
+    2. Sales Prediction
+A company has determined that its annual profit is typically 23 percent of total sales. Design a program that asks the user to enter the projected amount of 
+total sales, and then displays the profit that will be made from that amount.  Hint: Use the value 0.23 to represent 23 percent.
+
+FLOWchart
+(start)
+/Display "enter total sales"/
+/input totalSales/
+|Set profit = totalSales * 0.23 |
+/Display "the projected profit is $", profit/
+(end)
+
+PSEUDOcode
+Start
+	Display "enter total sales"
+	input totalSales
+	Set profit = totalSales * 0.23 
+	Display "the projected profit is $", profit
+End
+
+
+    3. Land Calculation
+One acre of land is equivalent to 43,560 square feet. Design a program that asks the user to enter the total square feet in a tract of land and calculates the 
+number of acres in the tract.  Hint: Divide the amount entered by 43,560 to get the number of acres.
+
+FLOWchart
+(start)
+/Display "enter total square feet of land"/
+/input sqFeet/
+|Set acres = sqFeet / 43560 |
+/Display "Acres are $", acres/
+(end)
+
+PSEUDOcode
+Start
+	Display "enter total sales"
+	input totalSales
+	Set profit = totalSales * 0.23 
+	Display "the projected profit is $", profit
+End
+
+
+    4. Total Purchase
+A customer in a store is purchasing five items. Design a program that asks for the price of each item, and then displays the subtotal of the sale, the amount of 
+sales tax, and the total. Assume the sales tax is 6 percent.
+
+
+
+
+    5. Distance Traveled
+Assuming there are no accidents or delays, the distance that a car travels down the interstate can be calculated with the following formula:
+Distance=Speed×TimeDistance=Speed×Time
+A car is traveling at a constant 60 miles per hour. Design a program that displays the following:
+        ◦ The distance the car will travel in 5 hours
+        ◦ The distance the car will travel in 8 hours
+        ◦ The distance the car will travel in 12 hours
+
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Practice Exercises
 Find The Bugs
 
