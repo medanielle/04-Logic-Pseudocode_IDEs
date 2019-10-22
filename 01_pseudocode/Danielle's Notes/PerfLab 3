@@ -36,3 +36,51 @@ Module checkRange (Integer value, Integer lower, Integer upper)
 End Module 
 
 End of Performance Lab 3
+
+
+
+Assume that you have created a mechanical arm that can hold a pen. The arm can perform the following tasks:
+* Lower the pen to a piece Of paper
+* Raise the pen from the paper
+* Move the pen 1 inch along a straight line. 
+  * If the pen is lowered, this action draws a 1-inch line from left to right; 
+  * if the pen is raised, this action just repositions the pen 1 inch to the right 
+* Turn 90 degrees to the right
+* Draw a circle that is 1 inch in diameter
+
+
+2-inch by 1-inch rectangle
+
+Module main
+	start
+		TwoInLine()
+		OneInLine()
+		TwoInLine()
+		OneInLine()
+	end
+
+module twoInLine()
+	start
+		lower pen
+		move pen 1in
+		move pen 1in
+		raise pen
+		turn 90 degrees
+	end
+	
+module OneInLine()
+	start
+		lower pen
+		move pen 1in
+		raise pen
+		turn 90 degrees
+	end
+
+
+
+
+Draw a structured flowchart or write structured pseudocode describing the logic that would cause the arm to draw or write the following. Have a fellow student act as the mechanical arm and carry out your instructions. Don't reveal the desired outcome to your partner until the exercise is complete.
+1-inch square
+2-inch by 1-inch rectangle
+string Of three beads
+short word (for example, cat)

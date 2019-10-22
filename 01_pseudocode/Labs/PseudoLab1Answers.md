@@ -35,7 +35,7 @@ Input 1stPrize
 
 Display "The first prize winner will receive "' 1stPrize
 ```
- ***there is a extra ' rather than a , in the last line***
+ ***there is a extra ' rather than a , in the last line : MISSED THE VARIABLE STARTED WITH A NUMBER***
 ---
 
 * The following code will not display the results expected by the programmer.  Can you find the error?
@@ -53,7 +53,7 @@ Set average = low + high/2
 Display "The average is ", average, "."
 
 ```
-*** the second to last line is missing () around lowest + highest, so only highest will e divided by 2***
+*** the second to last line is missing () around lowest + highest, so only highest divided by 2; wrong varible too(low v lowest)***
 ---
 
 * Find the error in the following pseudocode
@@ -64,7 +64,7 @@ Input length
 Declare Integer length
 
 ```
-
+***Answer: you have to declare before you use a variable, last line to top***
 ---
 
 * Find the error in the following pseudocode
@@ -85,7 +85,7 @@ Input value3
 Display "The sum of numbers is ", sum
 
 ```
-
+***Answer: you have to process the values into sum after inputing the values***
 ---
 
 * Find the error in the following pseudocode
@@ -95,7 +95,7 @@ Declare Real pi
 Set 3.14159265 = pi
 Display "The value of pi is ". pi
 ```
-
+***Answer: the second line is backwards it you be "pi =..." ;;  period in last line should be comma***
 ---
 
 * Find the error in the following pseudocode.
@@ -107,7 +107,7 @@ Display "Earth: ", GRAVITY, " meters per second every second."
 Set GRAVITY = 1.63
 Display "Moon: ", GRAVITY, " meters per second every second."
 ```
-
+***Answer: you can't change a constant variable (GRAVITY)***
 ---
 
 |[Next Topic](/01_pseudocode/02_pseudocode.md)|

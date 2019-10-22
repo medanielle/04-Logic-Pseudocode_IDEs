@@ -160,10 +160,15 @@ Perfomance Lab 1
 
 FLOWchart
 (start)
+
 /Display "Your Name"/
+
 /Display "Your address, with city, state, and ZIP"/
+
 /Display "Your telephone number"/
+
 /Display "Your college major"/
+
 (end)
 
 PSUEDOcode
@@ -183,10 +188,15 @@ total sales, and then displays the profit that will be made from that amount.  H
 
 FLOWchart
 (start)
+
 /Display "enter total sales"/
+
 /input totalSales/
+
 |Set profit = totalSales * 0.23 |
+
 /Display "the projected profit is $", profit/
+
 (end)
 
 PSEUDOcode
@@ -204,10 +214,15 @@ number of acres in the tract.  Hint: Divide the amount entered by 43,560 to get
 
 FLOWchart
 (start)
+
 /Display "enter total square feet of land"/
+
 /input sqFeet/
+
 |Set acres = sqFeet / 43560 |
+
 /Display "Acres are $", acres/
+
 (end)
 
 PSEUDOcode
@@ -232,22 +247,35 @@ FLOWchart
 (start)
 
 /Display "price of first item" /
+
 /input firstItem               /
+
 /Display "price of second item"/
+
 /input secondItem              /
+
 /Display "price of third item" /
+
 /input thirdItem               /
+
 /Display "price of fourth item"/
+
 /input fourthItem              /
+
 /Display "price of fifth item" /
+
 /input fifthItem               /
 
 |Set subtotal = firstItem + secondItem + thirdItem + fourthItem + fifthItem |
+
 |Set totalTax = subtotal * 0.06                                             |
+
 |Set totalCost = subtotal + totalTax                                        |
 
 /Display "Subtotal is", subtotal        /
+
 /Display "Total tax is", totalTax       /
+
 /Display "Total Cost is", totalCost     /
 
 (end)
@@ -295,12 +323,17 @@ A car is traveling at a constant 60 miles per hour. Design a program that displa
 
 FLOWchart
 (start)
+
 |Set distance5hr = 60 * 5     |
+
 |Set distance8hr = 60 * 8     |
+
 |Set distance12hr = 60 * 12   |
 
 /Display "Distance traveled in 5 hours is", distance5hr  /
+
 /Display "Distance traveled in 8 hours is", distance8hr  /
+
 /Display "Distance traveled in 12 hours is", distance12hr/
 
 (end)
@@ -311,61 +344,16 @@ Start
 	Declare numeric distance8hr
 	Declare numeric distance12hr
 	
-	|Set distance5hr = 60 * 5     |
-	|Set distance8hr = 60 * 8     |
-	|Set distance12hr = 60 * 12   |
+	Set distance5hr = 60 * 5     
+	Set distance8hr = 60 * 8     
+	Set distance12hr = 60 * 12   
 
-	/Display "Distance traveled in 5 hours is", distance5hr  /
-	/Display "Distance traveled in 8 hours is", distance8hr  /
-	/Display "Distance traveled in 12 hours is", distance12hr/
+	Display "Distance traveled in 5 hours is", distance5hr  
+	Display "Distance traveled in 8 hours is", distance8hr  
+	Display "Distance traveled in 12 hours is", distance12hr
 End
 
 
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Practice Exercises
-Find The Bugs
-
-1. Your files for this will be provided by the instructor. They include; DEBUG02-01.txt, DEBUG02-02.txt, and DEBUG02-03.txt. Each file starts with some comments that describe the problem. Comments are lines that begin with two slashes (//). Following the comments, each file contains pseudocode that has one or more bugs you must find and correct.
-
-2. Your files for this will be provided by the instructor. They include; DEBUG02-04.jpg that contains a flowchart with syntax and/or logical errors. Examine the flowchart, and then find and correct all of the bugs.
-
-Find the error in the following pseudocode
-1. 
-Module main()
-    Declare Real mileage
-    call getMileage()
-    Display "You've driven a total of ", mileage, " miles."
-End Module
-
-2. 
-Module getMileage()
-    Display "Enter your vehicle's mileage."
-    Input mileage
-End Module
-
-Find the potential error in the following pseudocode.
-1. 
-Module manin()
-    Call squareNumber(5)
-End Module
-
-2.
-Module squareNumber(Integer Ref number)
-    Set number = number^2
-    Display number
-End Module
-
-
-Summary
-Programs contain literals, variables, and named constants
-Arithmetic follows rules of precedence
-Break down programming problems into modules
-Include a header, a body, and a return statement
-Hierarchy charts show relationship among modules
-As programs become more complicated:
-Need for good planning and design increases
-Performance Lab 2
-
-Continue to Performance Lab 2 prior to continuing to the next topic.

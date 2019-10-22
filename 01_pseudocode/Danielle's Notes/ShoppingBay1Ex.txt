@@ -1,0 +1,39 @@
+start
+	//	Declarations
+			num idNumber
+	num numDays
+	num minReqBid
+	string itemDesc
+///	num MIN_BID = 250
+
+Declare Integer idNumber
+Declare Integer numDays
+Declare Real minReqBid
+Declare String itemDesc
+CONSTANT Integer MIN_BID = 250
+		GetMerch()
+		ReqMin()
+		
+stop
+
+	GetMerch()
+		Display “ Online Auction Program”
+		Display “ Enter Id: “
+		Input idNumber
+		Display “ Enter Description: “
+		Input itemDesc
+		Display “Enter Length in Days: “
+		Input numdays
+		Display “ Enter Minimum Bid: “
+		Input minReqBid
+
+		//output “Online Auction program”
+		//input idNumber, itemDesc, numDays, minReqBid
+	return
+
+	ReqMin()
+		if minReqBid > MIN_BID then
+			output idNumber, itemDesc, numDays, minReqBid
+		endif	
+	return
+
