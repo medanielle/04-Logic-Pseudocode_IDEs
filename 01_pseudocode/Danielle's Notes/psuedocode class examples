@@ -212,10 +212,15 @@ FLOWchart
 
 PSEUDOcode
 Start
-	Display "enter total sales"
-	input totalSales
-	Set profit = totalSales * 0.23 
-	Display "the projected profit is $", profit
+	Declare numeric acres
+	Declare numeric sqFeet
+	
+	Display "enter total square feet of land"
+	input sqFeet
+	
+	Set acres = sqFeet / 43560 
+	
+	Display "Acres are $", acres
 End
 
 
@@ -223,18 +228,97 @@ End
 A customer in a store is purchasing five items. Design a program that asks for the price of each item, and then displays the subtotal of the sale, the amount of 
 sales tax, and the total. Assume the sales tax is 6 percent.
 
+FLOWchart
+(start)
 
+/Display "price of first item" /
+/input firstItem               /
+/Display "price of second item"/
+/input secondItem              /
+/Display "price of third item" /
+/input thirdItem               /
+/Display "price of fourth item"/
+/input fourthItem              /
+/Display "price of fifth item" /
+/input fifthItem               /
 
+|Set subtotal = firstItem + secondItem + thirdItem + fourthItem + fifthItem |
+|Set totalTax = subtotal * 0.06                                             |
+|Set totalCost = subtotal + totalTax                                        |
+
+/Display "Subtotal is", subtotal        /
+/Display "Total tax is", totalTax       /
+/Display "Total Cost is", totalCost     /
+
+(end)
+
+PSEUDOcode
+Start
+
+	Declare numeric firstItem
+	Declare numeric secondItem
+	Declare numeric thirdItem
+	Declare numeric fourthItem
+	Declare numeric fifthItem
+	Declare numeric subtotal
+	Declare numeric totalTax
+	Declare numeric totalCost
+
+	Display "price of first item"
+	input firstItem
+	Display "price of second item"
+	input secondItem
+	Display "price of third item"
+	input thirdItem
+	Display "price of fourth item"
+	input fourthItem
+	Display "price of fifth item"
+	input fifthItem
+	
+	Set subtotal = firstItem + secondItem + thirdItem + fourthItem + fifthItem 
+	Set totalTax = subtotal * 0.06 
+	Set totalCost = subtotal + totalTax 
+
+	Display "Subtotal is", subtotal
+	Display "Total tax is", totalTax 
+	Display "Total Cost is", totalCost 
+
+End
 
     5. Distance Traveled
 Assuming there are no accidents or delays, the distance that a car travels down the interstate can be calculated with the following formula:
-Distance=Speed×TimeDistance=Speed×Time
+Distance=Speed×Time Distance=Speed×Time
 A car is traveling at a constant 60 miles per hour. Design a program that displays the following:
         ◦ The distance the car will travel in 5 hours
         ◦ The distance the car will travel in 8 hours
         ◦ The distance the car will travel in 12 hours
 
+FLOWchart
+(start)
+|Set distance5hr = 60 * 5     |
+|Set distance8hr = 60 * 8     |
+|Set distance12hr = 60 * 12   |
 
+/Display "Distance traveled in 5 hours is", distance5hr  /
+/Display "Distance traveled in 8 hours is", distance8hr  /
+/Display "Distance traveled in 12 hours is", distance12hr/
+
+(end)
+
+PSEUDOcode
+Start
+	Declare numeric distance5hr 
+	Declare numeric distance8hr
+	Declare numeric distance12hr
+	
+	|Set distance5hr = 60 * 5     |
+	|Set distance8hr = 60 * 8     |
+	|Set distance12hr = 60 * 12   |
+
+	/Display "Distance traveled in 5 hours is", distance5hr  /
+	/Display "Distance traveled in 8 hours is", distance8hr  /
+	/Display "Distance traveled in 12 hours is", distance12hr/
+End
 
 
 

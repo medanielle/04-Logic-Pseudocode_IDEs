@@ -1,0 +1,164 @@
+Microsoft Windows [Version 10.0.18362.418]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\student>git --version
+git version 2.23.0.windows.1
+
+C:\Users\student>cd Documents
+
+C:\Users\student\Documents>dir
+ Volume in drive C has no label.
+ Volume Serial Number is FCE9-0E3C
+
+ Directory of C:\Users\student\Documents
+
+10/10/2019  01:05 PM    <DIR>          .
+10/10/2019  01:05 PM    <DIR>          ..
+               0 File(s)              0 bytes
+               2 Dir(s)  455,033,839,616 bytes free
+
+C:\Users\student\Documents>git config --global user.name "Danielle Hughett"
+
+C:\Users\student\Documents>git config --global user.email "medanielle@gmail.com"
+
+C:\Users\student\Documents>git config --help
+
+C:\Users\student\Documents>git config --get user.name
+Danielle Hughett
+
+C:\Users\student\Documents>git config --get user.email
+medanielle@gmail.com
+
+C:\Users\student\Documents>git config --list
+core.symlinks=false
+core.autocrlf=true
+core.fscache=true
+color.diff=auto
+color.status=auto
+color.branch=auto
+color.interactive=true
+help.format=html
+rebase.autosquash=true
+http.sslbackend=schannel
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge --skip -- %f
+filter.lfs.process=git-lfs filter-process --skip
+filter.lfs.required=true
+credential.helper=manager
+user.name=Danielle Hughett
+user.email=medanielle@gmail.com
+
+C:\Users\student\Documents>dir
+ Volume in drive C has no label.
+ Volume Serial Number is FCE9-0E3C
+
+ Directory of C:\Users\student\Documents
+
+10/10/2019  01:05 PM    <DIR>          .
+10/10/2019  01:05 PM    <DIR>          ..
+               0 File(s)              0 bytes
+               2 Dir(s)  455,025,946,624 bytes free
+
+C:\Users\student\Documents>git clone https://github.com/medanielle/04-Logic-Pseudocode_IDEs.git
+Cloning into '04-Logic-Pseudocode_IDEs'...
+remote: Enumerating objects: 25, done.
+remote: Counting objects: 100% (25/25), done.
+remote: Compressing objects: 100% (25/25), done.
+                                                                   Receiving objects:  96% (1510/1572), 11.98 MiB | 1.36                                                                                                                        Receiving objects: 100% (1572/1572), 12.03 MiB | 1.00 MiB/s, done.
+Resolving deltas: 100% (913/913), done.
+
+C:\Users\student\Documents>dir
+ Volume in drive C has no label.
+ Volume Serial Number is FCE9-0E3C
+
+ Directory of C:\Users\student\Documents
+
+10/21/2019  01:07 PM    <DIR>          .
+10/21/2019  01:07 PM    <DIR>          ..
+10/21/2019  01:07 PM    <DIR>          04-Logic-Pseudocode_IDEs
+               0 File(s)              0 bytes
+               3 Dir(s)  454,994,604,032 bytes free
+
+C:\Users\student\Documents>code 04-Logic-Pseudocode_IDEs
+
+C:\Users\student\Documents>cd 04-Logic-Pseudocode_IDEs
+
+C:\Users\student\Documents\04-Logic-Pseudocode_IDEs>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   01_pseudocode/01_Overview_Checkpoints.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\student\Documents\04-Logic-Pseudocode_IDEs>git add .
+
+C:\Users\student\Documents\04-Logic-Pseudocode_IDEs>git commit -m "test"
+[master e3ade27] test
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\student\Documents\04-Logic-Pseudocode_IDEs>git commit --help
+
+C:\Users\student\Documents\04-Logic-Pseudocode_IDEs>git push origin master
+Logon failed, use ctrl+c to cancel basic credential prompt.
+Username for 'https://github.com': medanielle
+Password for 'https://medanielle@github.com':
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 352 bytes | 352.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/medanielle/04-Logic-Pseudocode_IDEs.git
+   2e77f5a..e3ade27  master -> master
+
+C:\Users\student\Documents\04-Logic-Pseudocode_IDEs>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   01_pseudocode/01_Overview_Checkpoints.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\student\Documents\04-Logic-Pseudocode_IDEs>git add .
+
+C:\Users\student\Documents\04-Logic-Pseudocode_IDEs>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   01_pseudocode/01_Overview_Checkpoints.md
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   01_pseudocode/01_Overview_Checkpoints.md
+
+
+C:\Users\student\Documents\04-Logic-Pseudocode_IDEs>git add .
+
+C:\Users\student\Documents\04-Logic-Pseudocode_IDEs>git commit -m "second test"
+[master 08bd89d] second test
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+C:\Users\student\Documents\04-Logic-Pseudocode_IDEs>git push origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 393 bytes | 196.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/medanielle/04-Logic-Pseudocode_IDEs.git
+   e3ade27..08bd89d  master -> master
+
+C:\Users\student\Documents\04-Logic-Pseudocode_IDEs>
