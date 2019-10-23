@@ -5,6 +5,44 @@
 Design a program that prompts the user to enter a number within the range of 1 through 10. The program should display the Roman numeral version of that number. If the number is outside the range of 1 through 10, the program should display an error message.
 
 module main()
+            //Decalre variables
+        declare int userNum
+        getData()
+        getRoman()
+
+    module getData()
+                //get data from user function, and check for correctness
+        Display "Enter a number 1-10: "
+        input userNum
+        if userNum <1 OR userNum >10 then
+            Display "Error, number out of range"
+    
+    module getRoman()
+                    ///this function prints the correct roman numeral
+        select userNum
+            Case 1:
+                Display userNum, " is I in Roman numerals"
+            Case 2:
+                Display userNum, " is II in Roman numerals"
+            Case 3:
+                Display userNum, " is III in Roman numerals"
+            Case 4:
+                Display userNum, " is IV in Roman numerals"
+            Case 5:
+                Display userNum, " is V in Roman numerals"
+            Case 6:
+                Display userNum, " is VI in Roman numerals"
+            Case 7:
+                Display userNum, " is VII in Roman numerals"
+            Case 8:
+                Display userNum, " is VIII in Roman numerals"
+            Case 9:
+                Display userNum, " is IX in Roman numerals"
+            Case 10:
+                Display userNum, " is X in Roman numerals"
+            Default:
+                Display "Error, number out of range"
+    
     
 
 
@@ -12,19 +50,86 @@ module main()
 
 The area of a rectangle is the rectangle’s length times its width. Design a program that asks for the length and width of two rectangles. The program should tell the user which rectangle has the greater area, or whether the areas are the same.
 
+main module()
+                //Declaration
+    declare Real box1Length, box1Width, box2Length, box2Width, box1Area, box2Area 
+
+    getBoxes(box1Length, box1Width, box2Length, box2Width)
+    getArea(box1Area, box2Area)
+    getResults(box1Area, box2Area)
+
+    module getBoxes(Real Ref box1Length, Real Ref box1Width, Real Ref box2Length, Real ref box2Width,)
+                //Get Data on Boxes from user
+        Display "Enter 1st Boxes Length: "
+        input box1Length
+        Display "Enter 1st Boxes Width: "
+        input box1Width       
+        Display "Enter 2nd Boxes Length: "
+        input box2Length
+        Display "Enter 2nd Boxes Width: "
+        input box2Width
+
+    module getCalc(Real Ref box1Area, Real Ref box2Area)
+                //get areas for the boxes
+        Set box1Area = box1Length * box1Width
+        Set box2Area = box2Length * box2Width 
+
+    module getResults()
+                //Display results to user
+        if box1Area > box2Area then
+            Display "The first box has the greater area!"
+        else if box2Area > box1Area then
+            Display "The second box has the greater area!"
+        else
+            Display "They have the same area!"
+
+
 # Mass and Weight
 
 Scientists measure an object’s mass in kilograms and its weight in Newtons. If you know the amount of mass of an object, you can calculate its weight, in Newtons, with the following formula:
 
 ![image](https://user-images.githubusercontent.com/47218880/67404289-c6b2d480-f578-11e9-80c0-9bfa15de3df7.png)
 
+        Weight = mass * 9.8
+
 Design a program that asks the user to enter an object’s mass, and then calculates its weight. If the object weighs more than 1,000 Newtons, display a message indicating that it is too heavy. If the object weighs less than 10 Newtons, display a message indicating that it is too light.
+
+main module()
+                //Declaration
+    declare Real mass, newtons 
+
+    getMass(mass)
+    getNewtons(newtons)
+    getResults(newtons)
+
+    module getMass(Real ref mass)
+                //Get Data on Mass from user
+        Display "Enter Mass in kg: "
+        input mass
+    end module
+
+    module getNewtons(Real ref newtons)
+                //calculate newtons from kilograms
+        set newtons = mass * 9.8
+    end module
+
+    module getResults(Real newtons)
+                //Display results to user
+        if newtons > 1000 then
+            Display "It is too heavy!"
+        else if newtons < 10 then
+            Display "It is too light!"
+        else
+            Display "It's weight is ", newtons, " Newtons!"
+    end module
 
 # Magic Dates
 
 The date June 10, 1960, is special because when it is written in the following format, the month times the day equals the year:
 
 ![image](https://user-images.githubusercontent.com/47218880/67404336-d92d0e00-f578-11e9-9801-6742f67d71fe.png)
+
+        6/10/60
 
 Design a program that asks the user to enter a month (in numeric form), a day, and a two-digit year. The program should then determine whether the month times the day equals the year. If so, it should display a message saying the date is magic. Otherwise, it should display a message saying the date is not magic.
 
@@ -39,6 +144,28 @@ When you mix red and yellow, you get orange.
 When you mix blue and yellow, you get green.
 ```
 Design a program that prompts the user to enter the names of two primary colors to mix. If the user enters anything other than “red,” “blue,” or “yellow,” the program should display an error message. Otherwise, the program should display the name of the secondary color that results.
+
+main module()
+                // Declaration
+    declare string primary1, primary2
+                //Get colors from users
+    GetColors()
+        Display "Enter first primary color: "
+        input primary1
+        Display "Enter second Primary color: "
+        input primary2
+    
+    checkColors()
+        if primary1 == 'red' OR primary1 == 'blue' OR primary1 == "yellow" then
+            pass
+        else 
+            Display "Error, you didn't enter a primary color"
+            exit
+    
+    printResults()
+        if p
+
+
 
 # Book Club Points
 

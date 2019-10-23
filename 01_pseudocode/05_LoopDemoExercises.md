@@ -45,7 +45,7 @@ Do you want to calculate another
 commission? (Enter y for yes.)
 n [Enter]
 ```
-# Program 5-2
+# Program 5-2  (do Until)
 ```
  1  // Declare a variable to hold the password.
  2  Declare String password

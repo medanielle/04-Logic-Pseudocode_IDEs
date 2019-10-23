@@ -1,0 +1,31 @@
+Constant Real KILOMETERS_TO_MILES = 0.6214
+
+// main module
+Module main()
+// Local variable to hold the distance, in kilometers
+Declare Real distanceKilometers
+
+// Get distance in kilometers
+Call getKilometers(distanceKilometers)
+
+// Display miles
+Call showMiles(distanceKilometers)
+End Module
+
+// The getKilometers module gets kilometers and stores it
+// in the kilometers reference variable.
+
+Module getKilometers(Real Ref kilometers)
+	Display "Enter the distance in kilometers."
+	Input kilometers
+End Module
+
+// The showMiles module accepts kilometers as an argument
+// and displays the equivalent miles.
+
+Module showMiles(Real kilometers)
+	Declare Real miles
+	Set miles = kilometers * KILOMETERS_TO_MILES
+	Display "The conversion of ", kilometers, " to miles is"
+	Display miles, " miles."
+End Module
