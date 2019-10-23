@@ -68,14 +68,14 @@ end for
 
 
          // Declare a variable to hold each number in fractions 
-   Declare Integer numerator = 1
+   Declare Integer numerator
    Declare integer denominator = 30
 
            // Declare an accumulator variable, initialized with 0.
    Declare float total = 0
 
             // Get factional numbers and accumulate them.
-   for numerator 1 to 30
+   for numerator = 1 to 30
       total += (numerator/denominator)
       numerator += 1
       denominator -= 1
@@ -90,8 +90,9 @@ end for
 for 1 to 10
    for 1 to 15
       Display "#"
+   end for
    Display newline
-
+end for
 
 * Convert the While loop in the following code to a Do-While loop:
 ```
