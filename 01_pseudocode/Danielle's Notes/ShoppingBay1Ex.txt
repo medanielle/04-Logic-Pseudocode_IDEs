@@ -1,6 +1,6 @@
 start
 	//	Declarations
-			num idNumber
+	num idNumber
 	num numDays
 	num minReqBid
 	string itemDesc
