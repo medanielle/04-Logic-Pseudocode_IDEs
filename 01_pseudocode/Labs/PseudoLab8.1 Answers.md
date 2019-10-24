@@ -12,16 +12,18 @@ module main()
             //Get hours from user and check for 0-40
     Display "Enter number of hours worked: "
     input hours
-    if hours < 0 OR hours > 40 then
+    while hours < 0 OR hours > 40 then
         Display "Hours must be between 0 and 40. Try Again!"
         input hours
+    end while
     
             //get pay rate and check for 7.5-18.25
     Display "Enter hourly pay rate: "
     input payRate
-    if pay rate < 7.5 OR payRate > 18.25 then
+    while pay rate < 7.5 OR payRate > 18.25 then
         Display "Pay Rate must be between $7.50 - $18.25. Try Again!"
         input payRate
+    end while
 
             //get gross pay and display
     set grossPay = hours * payRate
@@ -35,9 +37,43 @@ A dramatic theater has three seating sections, and it charges the following pric
 
 module main()
                 //Declaration
-    declare
+    declare integer ticketsA, ticketsB, ticketsC, total
 
-                //Input
+                //Get A section tickets from user and check for 0-300
+    Display "Enter # of tickets sold in A: "
+    input ticketA
+    while ticketA < 0 OR ticketA > 300
+        Display "Invalid! Tickets must be btween 0 and 300"
+        input ticketA
+    end while
+
+                //Get B section tickets from user and check for 0-500
+    Display "Enter # of tickets sold in B: "
+    input ticketB
+    while ticketB < 0 OR ticketB > 500
+        Display "Invalid! Tickets must be btween 0 and 500"
+        input ticketB
+    end while
+
+                //Get C section tickets from user and check for 0-200
+    Display "Enter # of tickets sold in C: "
+    input ticketC
+    while ticketC < 0 OR ticketC > 200
+        Display "Invalid! Tickets must be btween 0 and 200"
+        input ticketC
+    end while
+
+                //Display total sales from all tickets
+    Display "Total sales in those sections were $", getTicketSales(ticketsA, ticketsB, ticketsC)
+
+                //function to get total sales section A $20 each, section B $15 each, and section C $10 each
+    function integer getTicketSales(integer a, integer b, integer c)
+        declare integer total
+        total = (a*20)+(b*15)+(c*10)
+        return total
+    end function
+    
+end module
 
 ## Fat Gram Calculator
 
@@ -53,7 +89,36 @@ Once correct data has been entered, the program should calculate and display the
 
 ![image](https://user-images.githubusercontent.com/47218880/67504468-0ba93a80-f64f-11e9-85d0-f080ac66a64a.png)
 
+
+percentage = (fatgrams * 9) / calories
+
 Some nutritionists classify a food as “low fat” if less than 30 percent of its calories come from fat. If the results of this formula are less than 0.3, the program should display a message indicating the food is low in fat.
+
+module main()
+                //Declarations
+    declare real
+
+                //get input 
+    display "Enter # of fat grams: "
+    input fatGrams
+    display "Enter total calories: "
+    input calories
+                //validate 
+    while fatGrams < 0 OR calories < 0 OR calories > (fatGrams*9)
+        Display "Invalid! Cannot be a negative number and the number of calories cannot exceed "fat grams X 9 "
+        input fatGrams
+        input calories
+    end while    
+
+    set percentFat = getPercentFat(fatGrams, calories)
+    if percentFact <= 0.3 then
+        Display "This is a Low Fat food! Only ", percentFat*100, " % of its calories come from fat."
+    else
+        Display "This food has ", percentFat*100, " % of its calories come from fat.
+                //function for fat percentage
+    function real getPercentFat(real fat, real cal)
+        return ((fat * 9) / cal)
+
 
 ## Speeding Violation Calculator
 
@@ -69,50 +134,64 @@ Once correct data has been entered, the program should calculate and display the
 In a previous Programming Exercise option you were asked to design a program that plays the Rock, Paper, Scissors game. In the program, the user enters one of the three strings—"rock", "paper", or "scissors"—at the keyboard. Add input validation (with a case-insensitive comparison) to make sure the user enters one of those strings only.
 (If you didnt design one, here is a version of that game program to work with) 
 
-declare string doAgain = 'n'
+/// declare string doAgain = 'n'
 
 module main()
 
     declare integer computerNum, userNum
     declare string userString
-
+                        // do while will continue until players give different ansers, no ties allowed
     do 
+                        // set computer's random guess
         set computerNum = random(1, 3)
+                        //get user's guess
         display "Enter 'rock', 'paper' or 'scissors': "
         input userString
+                        // validate user's guess
+        while toLower(str) != 'rock' AND toLower(str) != 'paper' AND toLower(str) != 'scissors' then
+            Display "Invalid! Please try again!"
+            input userString
+        end while
+                        //turn string that user entered into 1,2, or 3
         set userNum = getWordsToNum(userString)
+                        //display computer's random guess
         display "Computers choice was ", getNumToWords(computerNum)
-        
-        if computerNum == 1 AND userNum == 3 then
+                        //check the guesses for a winner
+        Call getWinner(computerNum, userNum)
+    until computerNum != userNum
+
+                        //this function has no return but displays output if winner
+    function integer getWinner(integer computer, integer user)
+        if computer == 1 AND user == 3 then
             Display "The computer won!"
-        else if computerNum == 3 AND userNum == 1 then
+        else if computer == 3 AND user == 1 then
             Display "The user won!"
-        else if computerNum == 2 AND userNum == 1 then
+        else if computer == 2 AND user == 1 then
             Display "The computer won!"
-        else if computerNum == 1 AND userNum == 2 then
+        else if computer == 1 AND user == 2 then
             Display "The user won!"
-        else if computerNum == 3 AND userNum == 2 then
+        else if computer == 3 AND user == 2 then
             Display "The computer won!"
-        else if computerNum == 2 AND userNum == 3 then
+        else if computer == 2 AND user == 3 then
             Display "The user won!"
         else
-            Display "both players make the same choice, the game must be played again"
-            set doAgain = "y"
-    until doAgain == "y"
+            Display "Both players make the same choice, the game must be played again!"
+        return 0
+    end function
 
+                    //this function changes the string to integer
     function integer getWordsToNum(string str)
         declare integer num
-        if str == "rock" then
+        if toLower(str) == "rock" then
             set num = 1
-        else if str == "paper" then
+        else if toLower(str) == "paper" then
             set num = 2
-        else if str =="scissors" then
+        else if toLower(str) == "scissors" then
             set num = 3
-        else
-            Display "Error invalid entry, try again!"
-            set doAgain = "y"
     return num
+    end function
 
+                // function to turn integer into strings
     function string getNumToWords(integer num)
         declare string str
         if num ==1 then
@@ -121,10 +200,8 @@ module main()
             set str = "paper"
         else if num == 3 then
             set str = "scissors"
-        else
-            Display "Error invalid entry, try again!"
-            set doAgain = "y"
     return str
+    end function
 end module
 
 
