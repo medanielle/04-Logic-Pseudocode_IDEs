@@ -6,11 +6,40 @@ The area of a rectangle is calculated according to the following formula:
 
 ![image](https://user-images.githubusercontent.com/47218880/67446156-3e165180-f5d5-11e9-8673-1dab25034bff.png)
 
+Area = Width * Length
+
 Design a function that accepts a rectangle’s width and length as arguments and returns the rectangle’s area. Use the function in a program that prompts the user to enter the rectangle’s width and length, and then displays the rectangle’s area.
+
+module Main()
+    declare integer userWidth, userLength
+
+    display "Please enter width: "
+    input userWidth
+    display "please enter length: "
+    input userLength
+    Display "Here is the area: ", getArea(userWidth, userLength)
+
+    Function Integer getArea(width, length)
+        return width * length
+    end function
+end Module
 
 ## Feet to Inches
 
 One foot equals 12 inches. Design a function named feetToInches that accepts a number of feet as an argument, and returns the number of inches in that many feet. Use the function in a program that prompts the user to enter a number of feet and then displays the number of inches in that many feet.
+
+module Main()
+    declare integer userFeet
+
+    Display "Enter number of feet: "
+    input userFeet
+
+    Display "the number of inches: ", feetToInches(userFeet)
+
+    Function integer feetToInches(integer feet)
+        return feet * 12
+    end function
+end Module
 
 ## Math Quiz
 
@@ -21,9 +50,45 @@ Design a program that gives simple math quizzes. The program should display two 
 ```
 The program should allow the student to enter the answer. If the answer is correct, a message of congratulations should be displayed. If the answer is incorrect, a message showing the correct answer should be displayed.
 
+module main()
+    declare rand1, rand2, userAnswer, randAnswer
+
+    set rand1 = random(1, 300)
+    set rand2 = random(1, 300)
+    display "    ", rand1, "/n+  ", rand2
+    input userAnswer
+    randAnswer = rand1 + rand2
+
+    if userAnswer == randAnswer then
+        Display "congrats!"
+    else
+        Display "Correct answer is ", randAnswer
+end module
+    
+
+
 ## Maximum of Two Values
 
 Design a function named max that accepts two integer values as arguments and returns the value that is the greater of the two. For example, if 7 and 12 are passed as arguments to the function, the function should return 12. Use the function in a program that prompts the user to enter two integer values. The program should display the value that is the greater of the two.
+
+module main()
+    declare integer number1, number2
+
+    display "Enter 1st number: "
+    input number1
+    display "Enter 2nd number: "
+    input number2
+    display getMax(number1, number2), "is Bigger"
+
+    function integer getMax(integer num1, integer num2)
+        if num1 > num2 then
+            return num1
+        else if num2 > num1 then
+            return num2
+        else
+            Display "The numbers are equal"
+end module
+
 
 ## Falling Distance
 
@@ -31,9 +96,23 @@ When an object is falling because of gravity, the following formula can be used 
 
 ![image](https://user-images.githubusercontent.com/47218880/67446204-67cf7880-f5d5-11e9-9375-bbde7f1473b5.png)
 
+d = 1/2 * g * t^2
+
 The variables in the formula are as follows: d is the distance in meters, g is 9.8, and t is the amount of time, in seconds, that the object has been falling.
 
 Design a function named fallingDistance that accepts an object’s falling time (in seconds) as an argument. The function should return the distance, in meters, that the object has fallen during that time interval. Design a program that calls the function in a loop that passes the values 1 through 10 as arguments and displays the return value.
+
+module main()
+    declare real value
+
+    for value = 1 to 10 step 1
+        display "if Time = ", value, " then Distace = ", fallingDistance(value)
+    end for
+
+    function real fallingDistance(real time)
+        return .5 * 9.8 * time * time
+    end function
+end module
 
 ## Kinetic Energy
 
@@ -41,17 +120,65 @@ In physics, an object that is in motion is said to have kinetic energy. The foll
 
 ![image](https://user-images.githubusercontent.com/47218880/67446241-8fbedc00-f5d5-11e9-94c6-460160036f3f.png)
 
+KE = .5 * mass * velocity * velocity
+
 The variables in the formula are as follows: KE is the kinetic energy, m is the ­object’s mass in kilograms, and v is the object’s velocity, in meters per second.
 
 Design a function named kineticEnergy that accepts an object’s mass (in ­kilograms) and velocity (in meters per second) as arguments. The function should return the amount of kinetic energy that the object has. Design a program that asks the user to enter values for mass and velocity, and then calls the kineticEnergy function to get the object’s kinetic energy.
+
+module main()
+    declare real userMass, userVelocity
+
+    display "Enter mass (in ­kilograms): "
+    input userMass
+    display "Enter velocity (in meters per second): "
+    input userVelocity
+
+    Display "This is the Kinetic Energy: ", kineticEnergy(userMass, userVelocity)
+
+    function real kineticEnergy(mass, velocity)
+        return .5 * mass * velocity * velocity
+end module
 
 ## Odd/Even Counter
 
 In this chapter you saw an example of how to design an algorithm that determines whether a number is even or odd. Design a program that generates 100 random numbers, and keeps a count of how many of those random numbers are even and how many are odd.
 
+module main()
+    declare integer number, even, odd
+
+    for 1 to 100 step 1
+        number = random(1, 10)
+        if number % 2 = 0 then
+            even +=1
+        else 
+            odd += 1
+
+    display "There were ", odd, " odd numbers, and ", even, " even numbers."
+end module
+
 ## Guess the Number
 
 Design a number guessing game program. The program should generate a random number and then ask the user to guess the number. Each time the user enters his or her guess, the program should indicate whether it was too high or too low. The game is over when the user correctly guesses the number. When the game ends, the program should display the number of guesses that the user made.
+
+module main()
+    declare integer number, guess, count
+
+    number = random (1, 20)
+
+    Do 
+        Display "Enter Guess: "
+        input guess
+        count += 1
+        if guess > number then
+            Display "Too High!"
+        else if guess < number then
+            Display "Too Low!"
+        else
+            Display "Correct! That took ", count, " guesses."
+        end if
+    until guess == number
+end module
 
 ## Prime Numbers
 
@@ -59,12 +186,62 @@ A prime number is a number that is only evenly divisible by itself and 1. For ex
 
 Design a Boolean function named isPrime, which takes an integer as an argument and returns True if the argument is a prime number, or False otherwise. Use the function in a program that prompts the user to enter a number and then displays a message indicating whether the number is prime.
 
+module main()
+    declare integer number
+
+    Display "Enter an integer: "
+    input integer
+    
+    if isPrime(number) == True then 
+        Display "That's a prime!"
+    else if prime == False then
+        Display "That's not a prime
+    else 
+        Display "Error"
+    end if
+
+    function Boolean isPrime(integer num)
+        declare boolean prime
+        for count = 2 to (num-1) step 1
+            if num % count == 0 then
+                set prime = False 
+                break
+            else
+                set prime = True
+            end
+        end for
+    return prime
+        
+end module
+
  ### TIP:
 Recall that the MOD operator divides one number by another and returns the remainder of the division. In an expression such as num1 MOD num2, the MOD operator will return 0 if num1 is evenly divisible by num2.
 
 ## Prime Number List
 
 This exercise assumes you have already designed the isPrime function in Programming Exercise 10. Design another program that displays all of the prime numbers from 1 through 100. The program should have a loop that calls the isPrime function.
+
+module main()
+    declare interger count
+
+    Display "Here are all the prime numbers (1-100): "
+
+    for count = 1 to 100 step 1
+        if isPrime(count) == True then
+            Display count
+        end if
+        
+    function Boolean isPrime(integer num)
+        declare boolean prime
+        for count = 2 to (num-1) step 1
+            if num % count == 0 then
+                set prime = False 
+                break
+            else
+                set prime = True
+            end
+        end for
+    return prime
 
 ## Rock, Paper, Scissors Game
 
@@ -86,6 +263,69 @@ If one player chooses paper and the other player chooses rock, then paper wins. 
 
 If both players make the same choice, the game must be played again to determine the winner.
 ```
+
+
+declare string doAgain = 'n'
+
+module main()
+
+    declare integer computerNum, userNum
+    declare string userString
+
+    do 
+        set computerNum = random(1, 3)
+        display "Enter 'rock', 'paper' or 'scissors': "
+        input userString
+        set userNum = getWordsToNum(userString)
+        display "Computers choice was ", getNumToWords(computerNum)
+        
+        if computerNum == 1 AND userNum == 3 then
+            Display "The computer won!"
+        else if computerNum == 3 AND userNum == 1 then
+            Display "The user won!"
+        else if computerNum == 2 AND userNum == 1 then
+            Display "The computer won!"
+        else if computerNum == 1 AND userNum == 2 then
+            Display "The user won!"
+        else if computerNum == 3 AND userNum == 2 then
+            Display "The computer won!"
+        else if computerNum == 2 AND userNum == 3 then
+            Display "The user won!"
+        else
+            Display "both players make the same choice, the game must be played again"
+            set doAgain = "y"
+    until doAgain == "y"
+
+    function integer getWordsToNum(string str)
+        declare integer num
+        if str == "rock" then
+            set num = 1
+        else if str == "paper" then
+            set num = 2
+        else if str =="scissors" then
+            set num = 3
+        else
+            Display "Error invalid entry, try again!"
+            set doAgain = "y"
+    return num
+
+    function string getNumToWords(integer num)
+        declare string str
+        if num ==1 then
+            set str = "rock"
+        else if num ==2 then
+            set str = "paper"
+        else if num == 3 then
+            set str = "scissors"
+        else
+            Display "Error invalid entry, try again!"
+            set doAgain = "y"
+    return str
+end module
+
+
+
+
 
 ## Slot Machine Simulation
 
