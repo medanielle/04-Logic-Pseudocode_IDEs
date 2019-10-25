@@ -96,25 +96,28 @@ Some nutritionists classify a food as “low fat” if less than 30 percent of i
 
 module main()
                 //Declarations
-    declare real
+    declare real fatGrams, calories, percentFat
 
-                //get input 
-    display "Enter # of fat grams: "
-    input fatGrams
-    display "Enter total calories: "
-    input calories
-                //validate 
-    while fatGrams < 0 OR calories < 0 OR calories > (fatGrams*9)
-        Display "Invalid! Cannot be a negative number and the number of calories cannot exceed "fat grams X 9 "
+                //get input and validate
+    do
+        display "Enter # of fat grams: "
         input fatGrams
+        display "Enter total calories: "
         input calories
-    end while    
+        if fatGrams < 0 OR calories < 0 OR calories > (fatGrams*9) then
+            Display "Invalid! Cannot be a negative number and the number of calories cannot exceed fat grams X 9
+        end if
+    while fatGrams < 0 OR calories < 0 OR calories > (fatGrams*9)   
 
+                //calculate percent 
     set percentFat = getPercentFat(fatGrams, calories)
+
+                //display messages
     if percentFact <= 0.3 then
         Display "This is a Low Fat food! Only ", percentFat*100, " % of its calories come from fat."
     else
         Display "This food has ", percentFat*100, " % of its calories come from fat.
+
                 //function for fat percentage
     function real getPercentFat(real fat, real cal)
         return ((fat * 9) / cal)
@@ -129,6 +132,31 @@ The speed limit should be at least 20, but not greater than 70.
 The driver’s speed should be at least the value entered for the speed limit ­(otherwise the driver was not speeding).
 Once correct data has been entered, the program should calculate and display the number of miles per hour over the speed limit that the driver was doing.
 
+module main()
+                //Declaration
+    declare integer speeder, limit
+
+            //get speed limit and validate it is between 20-70 mph
+    display "Enter speed limit: "
+    input limit
+    while limit < 20 OR limit > 70
+        Display "The speed limit needs to be 20-70 mph. Please try again"
+        input limit
+    end while
+        
+            // get speeder's speed and validat that it is larger than the speed limit
+    display "Enter speed of speeder: "
+    input speeder
+    while speeder < limit
+        Display "The Speed should be bigger than the speed limit ­(otherwise the driver was not speeding)."
+        input speeder
+    end while
+
+    Display "Your speeder was", (speeder-limit), " mph over the limit"
+
+
+
+
 # Rock, Paper, Scissors Modification (MANDATORY)
 
 In a previous Programming Exercise option you were asked to design a program that plays the Rock, Paper, Scissors game. In the program, the user enters one of the three strings—"rock", "paper", or "scissors"—at the keyboard. Add input validation (with a case-insensitive comparison) to make sure the user enters one of those strings only.
@@ -140,7 +168,7 @@ module main()
 
     declare integer computerNum, userNum
     declare string userString
-                        // do while will continue until players give different ansers, no ties allowed
+                        // do while will continue until players give different answers, no ties allowed
     do 
                         // set computer's random guess
         set computerNum = random(1, 3)
